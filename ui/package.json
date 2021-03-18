@@ -1,0 +1,28 @@
+{
+  "name": "cs648-assignment4",
+  "version": "1.0.0",
+  "description": "forth assignment-ui",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel src --presets @babel/react --out-dir public",
+    "start": "nodemon -w uiserver.js uiserver.js",
+    "watch": "babel src --presets @babel/react --out-dir public --watch --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MongoDB",
+    "ESLint",
+    "Webpack"
+  ],
+  "author": "Jyoti",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10"
+  }
+}
