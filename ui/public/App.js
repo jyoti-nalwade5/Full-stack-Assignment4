@@ -103,7 +103,7 @@ class ProductList extends React.Component {
               imageUrl
             }
           }`;
-    const response = await fetch('http://localhost:3000/graphql', {
+    const response = await fetch(window.ENV.UI_API_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -125,7 +125,7 @@ class ProductList extends React.Component {
                 id
             }
           }`;
-    const response = await fetch('http://localhost:3000/graphql', {
+    const response = await fetch(window.ENV.UI_API_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
