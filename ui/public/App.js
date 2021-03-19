@@ -1,19 +1,32 @@
+/* eslint "react/react-in-jsx-scope": "off" */
+
+/* globals React ReactDOM */
+
+/* eslint "react/jsx-no-undef": "off" */
+
+/* eslint "react/no-multi-comp": "off" */
+
+/* eslint "no-alert": "off" */
 const buttonStyle = {
   color: 'black',
   background: 'rgb(197, 223, 81)',
   alignContent: 'center'
-};
+}; // eslint-disable-next-line react/prefer-stateless-function
 
-function ProductRow(props) {
-  const product = props.product;
+function ProductRow({
+  product
+}) {
   return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, product.name), /*#__PURE__*/React.createElement("td", null, "$", product.pricePerUnit), /*#__PURE__*/React.createElement("td", null, product.category), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
     href: product.imageUrl,
-    target: "_blank"
+    target: "_blank",
+    rel: "noopener noreferrer"
   }, "View")));
 }
 
-function ProductTable(props) {
-  const productRows = props.products.map(product => /*#__PURE__*/React.createElement(ProductRow, {
+function ProductTable({
+  products
+}) {
+  const productRows = products.map(product => /*#__PURE__*/React.createElement(ProductRow, {
     key: product.id,
     product: product
   }));
@@ -37,11 +50,14 @@ class ProductAdd extends React.Component {
       category: form.category.value,
       imageUrl: form.imageUrl.value
     };
-    this.props.createProduct(product);
-    form.productName.value = "";
-    form.pricePerUnit.value = "$";
-    form.category.value = "";
-    form.imageUrl.value = "";
+    const {
+      createProduct
+    } = this.props;
+    createProduct(product);
+    form.productName.value = '';
+    form.pricePerUnit.value = '$';
+    form.category.value = '';
+    form.imageUrl.value = '';
   }
 
   render() {
@@ -74,7 +90,8 @@ class ProductAdd extends React.Component {
       type: "text",
       name: "imageUrl"
     })))), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0 \xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", /*#__PURE__*/React.createElement("button", {
-      style: buttonStyle
+      style: buttonStyle,
+      type: "submit"
     }, "Add Product")))));
   }
 
@@ -141,8 +158,11 @@ class ProductList extends React.Component {
   }
 
   render() {
+    const {
+      products
+    } = this.state;
     return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, "My Company Inventory"), /*#__PURE__*/React.createElement("p", null, "Showing all available products"), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(ProductTable, {
-      products: this.state.products
+      products: products
     }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("p", null, "Add a new product to inventory"), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(ProductAdd, {
       createProduct: this.createProduct
     }));
