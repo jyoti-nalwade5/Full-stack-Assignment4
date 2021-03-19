@@ -4,9 +4,8 @@
   "description": "forth assignment-api",
   "main": "index.js",
   "scripts": {
-    "compile": "babel src --presets @babel/react --out-dir public",
     "start": "nodemon -e js,graphql -w . -w .env server.js",
-    "watch": "babel src --presets @babel/react --out-dir public --watch --verbose",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -23,5 +22,10 @@
     "graphql": "^0.13.2",
     "mongodb": "^3.6.5",
     "nodemon": "^1.19.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
