@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 require('dotenv').config();
 const express = require('express');
 

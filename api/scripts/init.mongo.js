@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 /*
  * Run using the mongo shell. For remote databases, ensure that the
  * connection string is supplied in the command line. For example:

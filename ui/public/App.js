@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 /* eslint "react/react-in-jsx-scope": "off" */
 
 /* globals React ReactDOM */
