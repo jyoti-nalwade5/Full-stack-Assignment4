@@ -89,7 +89,7 @@ class ProductAdd extends React.Component {
                 </select>
               </div>
             </td>
-                        &nbsp;
+              &nbsp;
             <td>
               <div>
                 Price Per Unit
